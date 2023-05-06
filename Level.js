@@ -1,15 +1,15 @@
 
 class Level {
-  constructor() {
+  constructor(floors, startPoints) {
     
-    let floors = []; 
-    let hazards = [];
+    this.floors = floors; 
+    this.hazards = [];
     
-    let startX;
-    let startY;
+    this.startX = startPoints.x; 
+    this.startY = startPoints.y; 
     
-    let endX;
-    let endY; 
+    this.endX;
+    this.endY; 
     
   }
   

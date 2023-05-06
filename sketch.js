@@ -5,16 +5,7 @@ let player;
 let xVelocity = 0;
 let yVelocity = 5;
 
-const xSpeedCap = 10;
-const ySpeedCap = 35; 
-
 let jumpCounter = 2; 
-
-let airDrag = 0.95;
-let groundDrag = 0.98;
-let acceleration = 0.6;
-
-let floors = [];
 
 let onGround;
 let onThisGround;
@@ -31,24 +22,16 @@ const jumpBuffer = 200;
 
 let lastJumped;
 
+let currentLevel;  
+let levelIndex = 0; 
+
+
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(HEIGHT, WIDTH);
 
   player = new Player();
 
-  floors.push(new Floor(0, 0, 20, height)); // Left Wall
-  floors.push(new Floor(20, 0, width - 40, 20)); // Ceiling
-  floors.push(new Floor(width - 20, 0, 20, height)); // Right Wall
-  floors.push(new Floor(20, height - 20, width - 40, 20)); // Floor
-  
-  floors.push(new Floor(0, 750, 200, 20));
-  
-  floors.push(new Floor(500, 450, 400, 20));
-  
-  floors.push(new Floor(200, 550, 400, 20));
-  
-  floors.push(new Floor(0, 150, 300, 20));
-  
+  currentLevel = levelList[levelIndex];
   
   lastJumped = millis();
   
@@ -120,30 +103,22 @@ function collideCheck(floor) {
     yVelocity *= -1;
   }
 
-  
-  
-  
-  
-  if(abs(xVelocity) > xSpeedCap){
+  if(abs(xVelocity) > X_SPEED_CAP){
     if(xVelocity < 0){
-      xVelocity = -xSpeedCap;
+      xVelocity = -X_SPEED_CAP;
     }else{
-      xVelocity = xSpeedCap; 
+      xVelocity = X_SPEED_CAP; 
     }
   }
   
   
-  if(abs(yVelocity) > ySpeedCap){
+  if(abs(yVelocity) > Y_SPEED_CAP){
     if(yVelocity < 0){
-      yVelocity = -ySpeedCap;
+      yVelocity = -Y_SPEED_CAP;
     }else{
-      yVelocity = ySpeedCap; 
+      yVelocity = Y_SPEED_CAP; 
     }
   }
-  
-
-  
-  
   
 }
 
@@ -157,21 +132,30 @@ function draw() {
 
   onGround = false;
 
-  for (let i in floors) {
-    collideCheck(floors[i]);
 
-    if (floors[i].moving == true) {
-      floors[i].update();
+  if(player.x > 700){
+    levelIndex = levelIndex >= levelList.length - 1 ? 0 : levelIndex + 1; 
+    console.log(levelIndex);
+    currentLevel = levelList[levelIndex];
+    player.x = levelList[levelIndex].startX;
+    player.y = levelList[levelIndex].startY; 
+  }
+
+  for (let i in currentLevel.floors) {
+    collideCheck(currentLevel.floors[i]);
+
+    if (currentLevel.floors[i].moving == true) {
+      currentLevel.floors[i].update();
     }
 
-    floors[i].draw();
+    currentLevel.floors[i].draw();
   }
 
   keyChecker();
 
-  xVelocity *= groundDrag;
-  yVelocity += acceleration;
-  yVelocity *= airDrag;
+  xVelocity *= GROUND_DRAG;
+  yVelocity += ACCELERATION;
+  yVelocity *= AIR_DRAG;
 
   player.update(xVelocity, yVelocity);
   player.draw(color1, color2, color3, color4);
