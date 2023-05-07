@@ -171,10 +171,13 @@ function draw() {
     player.draw(color1, color2, color3, color4);
 
     textFont("Georgia");
-    textSize(18);
-    fill(0, 102, 153);
-    text("Level: " + levelIndex, 675, 50);
-    text("Deaths: " + deathCounter, 675, 75);
+    textSize(16);
+    noStroke();
+    fill(212, 242, 255);
+    textAlign(LEFT);
+    text(`Level ${levelIndex+1}: ${currentLevel.name}`, 40, 14);
+    textAlign(RIGHT);
+    text("Deaths: " + deathCounter, 760, 14);
 
     if (DEBUG_MODE) {
         text(player.x, 600, 50);

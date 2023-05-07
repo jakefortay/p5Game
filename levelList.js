@@ -1,9 +1,9 @@
 
 let levelList = [
-    new Level([
-
-        // LEVEL 01: A New Beginning
-
+    new Level(
+        // LEVEL 01:
+        "A New Beginning",
+        [
         // Bounding Walls 
 
         // Left Wall
@@ -20,10 +20,10 @@ let levelList = [
         {x:50, y:750},
         new Floor(700, 720, 50, 50)
     ),
-    new Level([
-
-        // LEVEL 02: Getting it Started (in here)
-
+    new Level(
+        // LEVEL 02:
+        "Getting it Started (in here)",
+        [
         // Bounding Walls 
         
         // Left Wall
@@ -62,10 +62,10 @@ let levelList = [
         ]
     ),
 
-    new Level([
-
-        // LEVEL 03: Tricky Little Platform
-
+    new Level(
+        // LEVEL 03:
+        "Tricky Little Platform",
+        [
         // Bounding Walls 
         
         // Left Wall
@@ -98,10 +98,10 @@ let levelList = [
         ]
     ),
 
-    new Level([
-
-        // LEVEL 04: The Tumultuous Tunnel 
-
+    new Level(
+        // LEVEL 04:
+        "The Tumultuous Tunnel",
+        [
         // Bounding Walls 
         
         // Left Wall
@@ -171,10 +171,10 @@ let levelList = [
         ]
     ),
 
-    new Level([
-
-        // LEVEL 05: The Final Frontier
-
+    new Level(
+        // LEVEL 05:
+        "The Final Frontier",
+        [
         // Bounding Walls 
         
         // Left Wall
@@ -233,10 +233,10 @@ let levelList = [
         ]
     ),
 
-    new Level([
-
-        // LEVEL 06: The Chambers of Composure
-
+    new Level(
+        // LEVEL 06:
+        "The Chambers of Composure",
+        [
         // Bounding Walls 
 
         // Left Wall
@@ -305,10 +305,10 @@ let levelList = [
         ]
     ),
 
-    new Level([
-
-        // LEVEL 07: The End
-
+    new Level(
+        // LEVEL 07:
+        "The End",
+        [
         // Bounding Walls 
 
         // Left Wall
