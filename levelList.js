@@ -231,6 +231,60 @@ let levelList = [
             new Floor(20, 495, 20, 200, true, 20, 760, 4),
             
         ]
+    ),
+
+    new Level([
+
+        // LEVEL 06: The End
+
+        // Bounding Walls 
+
+        // Left Wall
+        new Floor(0, -100, 20, HEIGHT + 100),
+        // Right Wall
+        new Floor(WIDTH - 20, -100, 20, HEIGHT + 100),
+        // Ceiling
+        new Floor(-100, 0, WIDTH + 200, 20),
+        // Floor
+        new Floor(-100, HEIGHT - 20, WIDTH + 200, 20),
+
+        new Floor(150, 400, 20, 60),
+        new Floor(190, 400, 20, 60),
+        new Floor(170, 440, 20, 60),
+
+        new Floor(230, 400, 20, 100),
+        new Floor(250, 400, 20, 20),
+        new Floor(270, 400, 20, 100),
+        new Floor(250, 480, 20, 20),
+
+        new Floor(310, 400, 20, 100),
+        new Floor(350, 400, 20, 100),
+        new Floor(330, 480, 20, 20),
+
+        new Floor(390, 690, 20, 20),
+        new Floor(390, 550, 20, 120),
+
+        new Floor(430, 400, 20, 100),
+        new Floor(450, 480, 20, 20),
+        new Floor(470, 400, 20, 100),
+        new Floor(490, 480, 20, 20),
+        new Floor(510, 400, 20, 100),
+
+        new Floor(550, 400, 20, 100),
+
+        new Floor(590, 400, 20, 100),
+        new Floor(610, 400, 20, 20),
+        new Floor(630, 400, 20, 100),
+        
+
+
+
+
+
+
+        ],
+        {x:50, y:750},
+        new Floor(700, 720, 50, 50)
     )
     
 

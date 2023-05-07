@@ -16,7 +16,7 @@ let color4;
 let lastJumped;
 
 let currentLevel;
-let levelIndex = 4;
+let levelIndex = 0;
 
 let deathCounter = 0;
 
@@ -151,6 +151,8 @@ function draw() {
         ) {
             player.x = currentLevel.startX;
             player.y = currentLevel.startY;
+            xVelocity = 0; 
+            yVelocity = 0; 
             deathCounter++;
         }
     }
