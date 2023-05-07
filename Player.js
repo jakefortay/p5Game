@@ -13,16 +13,7 @@ class Player {
   }
 
   draw(color1, color2, color3, color4) {
-    fill(color1);
-    square(this.x, this.y, this.size / 2);
-    
-    fill(color2);
-    square(this.x + this.size / 2, this.y, this.size / 2);
-    
-    fill(color3);
-    square(this.x, this.y + this.size / 2, this.size / 2);
-    
-    fill(color4);
-    square(this.x + this.size / 2, this.y + this.size / 2, this.size / 2);
+    fill("red");
+    square(this.x, this.y, this.size);
   }
 }

@@ -1,6 +1,6 @@
 
 class Level {
-  constructor(floors, startPoints) {
+  constructor(floors, startPoints, endPoint) {
     
     this.floors = floors; 
     this.hazards = [];
@@ -8,8 +8,7 @@ class Level {
     this.startX = startPoints.x; 
     this.startY = startPoints.y; 
     
-    this.endX;
-    this.endY; 
+    this.endPoint = endPoint; 
     
   }
   

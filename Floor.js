@@ -18,12 +18,11 @@ class Floor {
     }else{
       this.xVelocity *= -1;
     }
-    
-    
   }
 
-  draw() {
-    fill("black");
+  draw(color) {
+    fill(color);
+    noStroke(); 
     rect(this.x, this.y, this.w, this.h);
   }
 }
