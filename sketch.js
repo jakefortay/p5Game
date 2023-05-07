@@ -16,7 +16,7 @@ let color4;
 let lastJumped;
 
 let currentLevel;
-let levelIndex = 5;
+let levelIndex = 0;
 
 let deathCounter = 0;
 
