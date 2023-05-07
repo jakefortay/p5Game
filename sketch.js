@@ -1,7 +1,5 @@
 // http://www.jeffreythompson.org/collision-detection/
 
-let player;
-
 let xVelocity = 0;
 let yVelocity = 5;
 
@@ -18,15 +16,20 @@ let color4;
 let lastJumped;
 
 let currentLevel;
-let levelIndex = 1;
+let levelIndex = 4;
+
+let deathCounter = 0;
+
+let player;
+
+let frameCounter = 0; 
 
 function setup() {
     createCanvas(HEIGHT, WIDTH);
 
-    player = new Player();
-
     currentLevel = levelList[levelIndex];
 
+    player = new Player();
     lastJumped = millis();
 }
 
@@ -74,8 +77,6 @@ function collideCheck(floor) {
         player.y + player.size < floor.y + floor.h;
     let topPlayerEdge = player.y > floor.y && player.y < floor.y + floor.h;
 
-
-
     if (
         bottomPlayerEdge &&
         topPlayerEdge &&
@@ -89,8 +90,7 @@ function collideCheck(floor) {
         }
     } else if (
         bottomPlayerEdge &&
-        (leftPlayerEdge ||
-        rightPlayerEdge) &&
+        (leftPlayerEdge || rightPlayerEdge) &&
         !topPlayerEdge
     ) {
         player.y = floor.y - player.size;
@@ -118,7 +118,7 @@ function collideCheck(floor) {
 }
 
 function draw() {
-    background(220);
+    background(200);
 
     color1 = "cyan";
     color2 = "cyan";
@@ -132,11 +132,27 @@ function draw() {
     for (let i in currentLevel.floors) {
         collideCheck(currentLevel.floors[i]);
 
-        if (currentLevel.floors[i].moving == true) {
-            currentLevel.floors[i].update();
-        }
+        currentLevel.floors[i].update();
 
         currentLevel.floors[i].draw("black");
+    }
+
+    for (let i in currentLevel.hazards) {
+        
+
+        currentLevel.hazards[i].update();
+
+        currentLevel.hazards[i].draw("red");
+
+        if (
+            collideHelper(currentLevel.hazards[i]) ||
+            abs(player.x) > 2000 ||
+            abs(player.y) > 2000
+        ) {
+            player.x = currentLevel.startX;
+            player.y = currentLevel.startY;
+            deathCounter++;
+        }
     }
 
     noStroke();
@@ -152,6 +168,20 @@ function draw() {
     player.update(xVelocity, yVelocity);
     player.draw(color1, color2, color3, color4);
 
-    text(player.x, 600, 50);
-    text(player.y, 600, 75);
+    textFont("Georgia");
+    textSize(18);
+    fill(0, 102, 153);
+    text("Level: " + levelIndex, 675, 50);
+    text("Deaths: " + deathCounter, 675, 75);
+
+    if (DEBUG_MODE) {
+        text(player.x, 600, 50);
+        text(player.y, 600, 75);
+    }
+
+    if(frameCounter == 255){
+        frameCounter = 0;
+    }
+
+    frameCounter++; 
 }

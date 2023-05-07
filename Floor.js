@@ -1,6 +1,6 @@
 
 class Floor {
-  constructor(x, y, w, h, moving, xLim1, xLim2, xVelocity) {
+  constructor(x, y, w, h, moving, xLim1, xLim2, movingVelocity) {
     this.x = x;
     this.y = y;
     this.w = w; 
@@ -8,16 +8,25 @@ class Floor {
     this.moving = moving; 
     this.xLim1 = xLim1;
     this.xLim2 = xLim2;
-    this.xVelocity = xVelocity; 
+    this.movingVelocity = movingVelocity; 
   }
 
   update() {  
-  
-    if(this.x + this.xVelocity <= this.xLim2 && this.x + this.xVelocity >= this.xLim1){
-      this.x += this.xVelocity;
-    }else{
-      this.xVelocity *= -1;
+    if(this.moving == true){
+      if(this.x + this.movingVelocity <= this.xLim2 && this.x + this.movingVelocity >= this.xLim1){
+        this.x += this.movingVelocity;
+      }else{
+        this.movingVelocity *= -1;
+      }
+    }else if(this.moving == false){
+      
+      if(this.y + this.movingVelocity <= this.xLim2 && this.y + this.movingVelocity >= this.xLim1){
+        this.y += this.movingVelocity;
+      }else{
+        this.movingVelocity *= -1;
+      }
     }
+
   }
 
   draw(color) {

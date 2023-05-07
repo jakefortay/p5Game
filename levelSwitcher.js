@@ -1,13 +1,17 @@
 
-function collideHelper(){
-    let endX = currentLevel.endPoint.x; 
-    let endY = currentLevel.endPoint.y; 
-    let endSize = currentLevel.endPoint.w; 
+function collideHelper(colObject){
 
-    let leftEdge = player.x > endX && player.x < endX + endSize; 
-    let rightEdge = player.x + player.size > endX && player.x + player.size < endX + endSize; 
-    let topEdge = player.y > endY && player.y < endY + endSize; 
-    let bottomEdge = player.y + player.size > endY && player.y + player.size < endY + endSize; 
+
+
+    let endX = colObject.x; 
+    let endY = colObject.y; 
+    let endW = colObject.w; 
+    let endH = colObject.h; 
+
+    let leftEdge = player.x > endX && player.x < endX + endW; 
+    let rightEdge = player.x + player.size > endX && player.x + player.size < endX + endW; 
+    let topEdge = player.y > endY && player.y < endY + endH; 
+    let bottomEdge = player.y + player.size > endY && player.y + player.size < endY + endH; 
 
     if((topEdge && rightEdge) || (bottomEdge && rightEdge) || (leftEdge && bottomEdge) || (topEdge && leftEdge)){
         return true; 
@@ -21,7 +25,7 @@ function collideHelper(){
 
 function levelSwitcher(){
     
-    if(collideHelper()){
+    if(collideHelper(currentLevel.endPoint)){
         levelIndex = levelIndex >= levelList.length - 1 ? 0 : levelIndex + 1; 
         currentLevel = levelList[levelIndex];
         player.x = levelList[levelIndex].startX;
