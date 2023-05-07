@@ -235,7 +235,79 @@ let levelList = [
 
     new Level([
 
-        // LEVEL 06: The End
+        // LEVEL 06: The Chambers of Composure
+
+        // Bounding Walls 
+
+        // Left Wall
+        new Floor(0, -100, 20, HEIGHT + 100),
+        // Right Wall
+        new Floor(WIDTH - 20, -100, 20, HEIGHT + 100),
+        // Ceiling
+        new Floor(-100, 0, WIDTH + 200, 20),
+        // Floor
+        new Floor(-100, HEIGHT - 20, WIDTH + 200, 20),
+
+        // Bottom Room
+        // Roof
+        new Floor(20, 600, 700, 20),
+        // Bumpers
+        new Floor(250, 761, 50, 20),
+        new Floor(500, 761, 50, 20),
+        // Ledge
+        new Floor(710, 690, 70, 20),
+
+        // Bottom-Middle Room
+        // Roof
+        new Floor(80, 420, 700, 20),
+        // Bumpers
+        new Floor(250, 581, 50, 20),
+        new Floor(500, 581, 50, 20),
+        // Ledge
+        new Floor(20, 510, 70, 20),
+
+        // Top-Middle Room
+        // Roof
+        new Floor(20, 240, 700, 20),
+        // Bumpers
+        new Floor(250, 401, 50, 20),
+        new Floor(500, 401, 50, 20),
+        // Ledge
+        new Floor(710, 330, 70, 20),
+
+        // Top Room
+        // Roof
+        new Floor(80, 60, 700, 20),
+        // Bumpers
+        new Floor(250, 221, 50, 20),
+        new Floor(500, 221, 50, 20),
+        // Ledge
+        new Floor(20, 150, 70, 20),
+        ],
+        {x:30, y:750},
+        new Floor(750, 30, 20, 20),
+        // Hazards
+        [
+        // Bottom Room
+        new Floor(20, 720, 200, 25, true, 20, 580, 7),
+        new Floor(580, 650, 200, 25, true, 20, 580, 7),
+        // Bottom-Middle Room
+        new Floor(580, 540, 200, 25, true, 20, 580, 7),
+        new Floor(20, 470, 200, 25, true, 20, 580, 7),
+        //Top-Middle Room
+        new Floor(20, 360, 200, 25, true, 20, 580, 7),
+        new Floor(580, 290, 200, 25, true, 20, 580, 7),
+        // Top Room
+        new Floor(580, 180, 200, 25, true, 20, 580, 7),
+        new Floor(20, 110, 200, 25, true, 20, 580, 7),
+        // End Room
+        new Floor(150, 20, 5, 40, true, 20, 730, 3),
+        ]
+    ),
+
+    new Level([
+
+        // LEVEL 07: The End
 
         // Bounding Walls 
 
