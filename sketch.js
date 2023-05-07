@@ -175,11 +175,12 @@ function draw() {
     textSize(16);
     noStroke();
     fill(212, 242, 255);
-    textAlign(LEFT);
     text(`Level ${levelIndex+1}: ${currentLevel.name}`, 40, 14);
     textAlign(RIGHT);
     text("Deaths: " + deathCounter, 760, 14);
+    textAlign(LEFT);
     if(levelIndex == levelList.length - 1){
+
         text("Fewest Deaths: " + lowestDeaths, 50, 50);
 
         text("Best Time: ", 50, 75);

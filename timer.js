@@ -3,6 +3,8 @@ let hours = 0;
 let minutes = 0; 
 let seconds = 0; 
 
+let timeString; 
+
 function timer(frames){
 
     if(frames % 60 == 0){
@@ -21,25 +23,12 @@ function timer(frames){
 
     textFont("Georgia");
     textSize(18);
-    fill(0, 102, 153);
-    if(hours < 10){
-        text("0" + hours + ":", 675, 95);
-    }else{
-        text(hours + ":", 675, 95);
-    }
-
-    if(minutes < 10){
-        text("0" + minutes + ":", 703, 95);
-    }else{
-        text(minutes + ":", 703, 95);
-    }
+    fill("white");
 
     
-    if(seconds < 10){
-        text("0" + seconds, 731, 95);
-    }else{
-        text(seconds, 731, 95);
-    }
+    
+    timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
 
+    text(timeString, 600, 14);
 
 }

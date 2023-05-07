@@ -136,17 +136,13 @@ let levelList = [
 
         [
 
-            new Floor(250, 450, 30, 150),
-            new Floor(350, 350, 30, 150),
-            new Floor(450, 450, 30, 150),
-            new Floor(550, 350, 30, 150),
+        new Floor(250, 450, 30, 150),
+        new Floor(350, 350, 30, 150),
+        new Floor(450, 450, 30, 150),
+        new Floor(550, 350, 30, 150),
             
-
-
-
-            new Floor(130, 75, 20, 25, true, 130, 580, 10),
-            new Floor(560, 75, 20, 25, true, 130, 580, 10),
-
+        new Floor(130, 75, 20, 25, true, 130, 580, 10),
+            
         new Floor(200, 650, 20, 30, false, 650, 750, 1.5),
         new Floor(220, 660, 20, 30, false, 650, 750, 1.5),
         new Floor(240, 670, 20, 30, false, 650, 750, 1.5),
