@@ -12,7 +12,7 @@ class Player {
     this.y += yVelocity;
   }
 
-  draw(color1, color2, color3, color4) {
+  draw() {
     fill("tan");
     square(this.x, this.y, this.size);
 

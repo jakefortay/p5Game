@@ -200,7 +200,7 @@ let levelList = [
         new Floor(650, 300, 21, 20),
 
 
-        new Floor(430, 20, 25, 80),
+        new Floor(430, 20, 25, 100),
         new Floor(100, 100, 400, 20),
 
         
@@ -358,6 +358,48 @@ let levelList = [
 
 
 ]
+
+
+
+let testLevel = new Level(
+
+            "Test Environment",
+
+            [
+            // Left Wall
+            new Floor(0, -100, 20, HEIGHT + 100),
+            // Right Wall
+            new Floor(WIDTH - 20, -100, 20, 200),
+            // Ceiling
+            new Floor(-100, 0, WIDTH + 200, 20),
+            // Floor
+            new Floor(-100, HEIGHT - 20, WIDTH + 200, 20),
+
+            new Floor(0, 650, 100, 40),
+            new Floor(0, 660, 110, 20),
+            
+            
+
+            ],
+            {x:50, y:750},
+
+            new Floor(700, 720, 50, 50),
+
+            [
+            new Floor(580, 540, 200, 25, true, 20, 580, 7),
+            new Floor(20, 470, 200, 25, true, 20, 580, 7),
+            ],
+
+            [
+                new Gun(100, 100, 1000, 20, 20, 5, 0),
+                new Gun(100, 660, 150, 20, 20, 10, 0)
+            ]
+            
+
+
+
+
+); 
 
 
 
