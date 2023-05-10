@@ -26,12 +26,8 @@ function setup() {
         currentLevel = levelList[levelIndex];
     }
 
-    
-
     player = new Player();
     lastJumped = millis();
-
-
 }
 
 
@@ -66,8 +62,8 @@ function draw() {
 
         if (
             collideHelper(currentLevel.hazards[i]) ||
-            abs(player.x) > WIDTH * 1.5 ||
-            abs(player.y) > HEIGHT * 1.5
+            abs(player.x) > WIDTH * 2 ||
+            abs(player.y) > HEIGHT * 2
         ) {
             resetPlayer(); 
         }

@@ -19,3 +19,5 @@ const JUMP_BUFFER = 200;
 const JUMP_HEIGHT = 15;
 const PLAYER_SPEED = 0.4; 
 
+const LEVEL_7_HEIGHT = 800;
+const LEVEL_7_WIDTH = 1600; 

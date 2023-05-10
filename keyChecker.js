@@ -29,6 +29,6 @@ function keyChecker() {
             lastJumped = millis();
         }
     } else if(keyIsDown(DOWN_ARROW)){
-        xVelocity *= 0.85; 
+        xVelocity *= 0.75; 
     }
 }

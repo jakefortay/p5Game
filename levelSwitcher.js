@@ -10,7 +10,16 @@ function levelSwitcher(){
     
     if(collideHelper(currentLevel.endPoint)){
         levelIndex = levelIndex >= levelList.length - 1 ? 0 : levelIndex + 1; 
+
+        if(levelList[levelIndex].custom != null){
+            resizeCanvas(levelList[levelIndex].resizeW, levelList[levelIndex].resizeH);
+        }else{
+            resizeCanvas(HEIGHT, WIDTH);
+        }
+
         currentLevel = levelList[levelIndex];
+
+
         player.x = levelList[levelIndex].startX;
         player.y = levelList[levelIndex].startY; 
         xVelocity = 0; 
@@ -38,6 +47,14 @@ function levelSwitcher(){
             hours = 0; 
 
 
+        }
+
+        if(levelIndex > 0){
+            if(levelList[levelIndex - 1].guns != null){
+                for(let i in levelList[levelIndex - 1].guns){
+                    levelList[levelIndex - 1].guns[i].clear(); 
+                }
+            }
         }
 
 
