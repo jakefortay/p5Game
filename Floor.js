@@ -4,15 +4,11 @@ const DIRECTIONS = {
 };
 
 class Floor {
-  constructor(x, y, w, h, moving, xLim1, xLim2, movingVelocity) {
+  constructor(x, y, w, h) {
     this.x = x;
     this.y = y;
     this.w = w;
     this.h = h;
-    this.moving = moving;
-    this.xLim1 = xLim1;
-    this.xLim2 = xLim2;
-    this.movingVelocity = movingVelocity;
   }
 
   draw(color) {

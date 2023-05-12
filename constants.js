@@ -1,5 +1,5 @@
 
-const DEBUG_MODE = true; 
+const DEBUG_MODE = false; 
 
 // canvas creation 
 const HEIGHT = 800; 
