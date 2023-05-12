@@ -1,9 +1,8 @@
 
-
 class Player {
   constructor() {
-    this.x = currentLevel.startX;
-    this.y = currentLevel.startY;
+    this.x = currentLevel.startPoint.x;
+    this.y = currentLevel.startPoint.y;
     this.size = 20;
   }
 
