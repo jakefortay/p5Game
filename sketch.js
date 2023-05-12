@@ -20,17 +20,16 @@ function setup() {
     sprite1 = loadImage('Batman1.png');
     createCanvas(HEIGHT, WIDTH);
 
-    if(DEBUG_MODE){
-        currentLevel = testLevel;
-    }else{
-        currentLevel = levelList[levelIndex];
+    if (DEBUG_MODE) {
+        currentLevel = loadLevel(testLevel);
+        populateLevelSelector();
+    } else {
+        currentLevel = loadLevel(levelList[levelIndex]);
     }
 
     player = new Player();
     lastJumped = millis();
 }
-
-
 
 function draw() {
     
@@ -39,8 +38,17 @@ function draw() {
     if (DEBUG_MODE) {
         text(player.x, 600, 50);
         text(player.y, 600, 75);
-    }else{
-        levelSwitcher();
+    } else {
+        let levelComplete = false;
+        for (let endPoint of currentLevel.targets) {
+            if (collideHelper(endPoint)) {
+                levelComplete = true;
+                break;
+            }
+        }
+        if (levelComplete) {
+            levelSwitcher();
+        }
     }
 
     gunHandler(); 
@@ -50,14 +58,18 @@ function draw() {
     for (let i in currentLevel.floors) {
         collideCheck(currentLevel.floors[i]);
 
-        currentLevel.floors[i].update();
+        if (currentLevel.floors[i] instanceof MovingFloor) {
+            currentLevel.floors[i].update();
+        }
 
         currentLevel.floors[i].draw("black");
     }
 
     for (let i in currentLevel.hazards) {
         
-        currentLevel.hazards[i].update();
+        if (currentLevel.hazards[i] instanceof MovingFloor) {
+            currentLevel.hazards[i].update();
+        }
         currentLevel.hazards[i].draw("red");
 
         if (
@@ -82,7 +94,9 @@ function draw() {
 
 
     noStroke();
-    currentLevel.endPoint.draw("green");
+    for (let endPoint of currentLevel.targets) {
+        endPoint.draw("green");
+    }
     stroke(1);
 
 
@@ -96,4 +110,15 @@ function draw() {
         timer(frameCount);
     }
     
+}
+
+function populateLevelSelector() {
+    let select = document.getElementById("level-selector");
+    select.hidden = false;
+    for (let i in levelList) {
+        let option = document.createElement("option");
+        option.value = i;
+        option.innerHTML = `Level ${i.toString().padStart(2, '0')}`;
+        select.appendChild(option);
+    }
 }
