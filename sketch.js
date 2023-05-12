@@ -38,18 +38,19 @@ function draw() {
     if (DEBUG_MODE) {
         text(player.x, 600, 50);
         text(player.y, 600, 75);
-    } else {
-        let levelComplete = false;
-        for (let endPoint of currentLevel.targets) {
-            if (collideHelper(endPoint)) {
-                levelComplete = true;
-                break;
-            }
-        }
-        if (levelComplete) {
-            levelSwitcher();
+    }  
+
+    let levelComplete = false;
+    for (let target of currentLevel.targets) {
+        if (collideHelper(target)) {
+            levelComplete = true;
+            break;
         }
     }
+    if (levelComplete) {
+        levelSwitcher();
+    }
+    
 
     gunHandler(); 
 
@@ -73,12 +74,14 @@ function draw() {
         currentLevel.hazards[i].draw("red");
 
         if (
-            collideHelper(currentLevel.hazards[i]) ||
-            abs(player.x) > WIDTH * 2 ||
-            abs(player.y) > HEIGHT * 2
+            collideHelper(currentLevel.hazards[i]) 
         ) {
             resetPlayer(); 
         }
+    }
+
+    if(abs(player.x) > WIDTH * 2 || abs(player.y) > HEIGHT * 2){
+        resetPlayer();
     }
 
     keyChecker();
