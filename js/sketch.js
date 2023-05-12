@@ -17,7 +17,6 @@ let sprite1;
 
 function setup() {
     
-    sprite1 = loadImage('Batman1.png');
     createCanvas(HEIGHT, WIDTH);
 
     if (DEBUG_MODE) {
