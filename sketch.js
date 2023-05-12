@@ -92,7 +92,7 @@ function draw() {
 
     frameCounter++; 
 
-    if(levelIndex < levelList.length - 1){
+    if(levelIndex > 0 && levelIndex < levelList.length - 1){
         timer(frameCount);
     }
     
