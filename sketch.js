@@ -50,14 +50,18 @@ function draw() {
     for (let i in currentLevel.floors) {
         collideCheck(currentLevel.floors[i]);
 
-        currentLevel.floors[i].update();
+        if (currentLevel.floors[i] instanceof MovingFloor) {
+            currentLevel.floors[i].update();
+        }
 
         currentLevel.floors[i].draw("black");
     }
 
     for (let i in currentLevel.hazards) {
         
-        currentLevel.hazards[i].update();
+        if (currentLevel.hazards[i] instanceof MovingFloor) {
+            currentLevel.hazards[i].update();
+        }
         currentLevel.hazards[i].draw("red");
 
         if (
