@@ -53,12 +53,12 @@ function levelSwitcher() {
 }
 
 function loadLevel(levelData) {
-    let staticFloors = levelData.floors.static.map(f => new Floor(f.x, f.y, f.w, f.h));
-    let movingFloors = levelData.floors.moving.map(f => new MovingFloor(f.x, f.y, f.w, f.h, f.dir, f.l1, f.l2, f.spd));
-    let staticHazards = levelData.hazards.static.map(f => new Floor(f.x, f.y, f.w, f.h));
-    let movingHazards = levelData.hazards.moving.map(f => new MovingFloor(f.x, f.y, f.w, f.h, f.dir, f.l1, f.l2, f.spd));
+    let staticFloors = levelData.floors.static.map(f => new Floor(f.x, f.y, f.w, f.h, f.c));
+    let movingFloors = levelData.floors.moving.map(f => new MovingFloor(f.x, f.y, f.w, f.h, f.dir, f.l1, f.l2, f.spd, f.c));
+    let staticHazards = levelData.hazards.static.map(f => new Floor(f.x, f.y, f.w, f.h, f.c));
+    let movingHazards = levelData.hazards.moving.map(f => new MovingFloor(f.x, f.y, f.w, f.h, f.dir, f.l1, f.l2, f.spd, f.c));
     let guns = levelData.hazards.guns.map(g => new Gun(g.x, g.y, g.rate, g.bltW, g.bltH, g.bltVx, g.bltVy, g.buffer, g.pierce, g.color));
-    let targets = levelData.targets.map(f => new Floor(f.x, f.y, f.w, f.h));
+    let targets = levelData.targets.map(f => new Floor(f.x, f.y, f.w, f.h, f.c));
     
     return new Level(
         levelData.name,

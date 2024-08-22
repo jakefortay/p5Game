@@ -21,3 +21,11 @@ const PLAYER_SPEED = 0.4;
 
 const LEVEL_7_HEIGHT = 800;
 const LEVEL_7_WIDTH = 1600; 
+
+const COLORS = {
+
+    FLOOR_COLOR : "black",
+    HAZARD_COLOR : "red",
+    TARGET_COLOR : "green"
+    
+}

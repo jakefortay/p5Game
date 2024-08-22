@@ -21,6 +21,7 @@ function setup() {
 
     if (DEBUG_MODE) {
         currentLevel = loadLevel(testLevel);
+        resizeCanvas(currentLevel.altSize.width, currentLevel.altSize.height);
         populateLevelSelector();
     } else {
         currentLevel = loadLevel(levelList[levelIndex]);
@@ -62,7 +63,7 @@ function draw() {
             currentLevel.floors[i].update();
         }
 
-        currentLevel.floors[i].draw("black");
+        currentLevel.floors[i].draw();
     }
 
     for (let i in currentLevel.hazards) {
@@ -70,7 +71,7 @@ function draw() {
         if (currentLevel.hazards[i] instanceof MovingFloor) {
             currentLevel.hazards[i].update();
         }
-        currentLevel.hazards[i].draw("red");
+        currentLevel.hazards[i].draw();
 
         if (
             collideHelper(currentLevel.hazards[i]) 

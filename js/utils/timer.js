@@ -24,8 +24,6 @@ function timer(frames){
     textFont("Georgia");
     textSize(18);
     fill("white");
-
-    
     
     timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
 
