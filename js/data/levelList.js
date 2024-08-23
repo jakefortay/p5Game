@@ -2,6 +2,9 @@ const levelList = [
     { // Level 01
         name: "A New Beginning",
         playerStart: {x: 50, y: 750},
+        backgrounds: [
+        
+        ],
         floors: {
             static: [
                 // Bounding Walls
@@ -24,6 +27,9 @@ const levelList = [
     { // Level 02:
         name: "Getting it Started (in here)",
         playerStart: {x: 50, y: 700},
+        backgrounds: [
+        
+        ],
         floors: {
             static: [
                 // Bounding Walls
@@ -61,6 +67,9 @@ const levelList = [
     { // Level 04:
         name: "The Tumultuous Tunnel",
         playerStart: {x: 50, y: 775},
+        backgrounds: [
+        
+        ],
         floors: {
             static: [
                 // Bounding Walls
@@ -122,6 +131,9 @@ const levelList = [
     { // Level 05:
         name: "The Final Frontier",
         playerStart: {x: 60, y: 720},
+        backgrounds: [
+        
+        ],
         floors: {
             static: [
                 // Bounding Walls
@@ -169,6 +181,9 @@ const levelList = [
     { // Level 06:
         name: "The Chambers of Composure",
         playerStart: {x: 30, y: 750},
+        backgrounds: [
+        
+        ],
         floors: {
             static: [
                 // Bounding Walls
@@ -229,6 +244,9 @@ const levelList = [
         name: "Big Bertha.",
         altSize: {width: LEVEL_7_WIDTH,  height: LEVEL_7_HEIGHT},
         playerStart: {x: 50, y: 750},
+        backgrounds: [
+        
+        ],
         floors: {
             static: [
                 // Bounding Walls
@@ -316,6 +334,9 @@ const levelList = [
         name: "The End",
         altSize: null,
         playerStart: {x: 50, y: 750},
+        backgrounds: [
+        
+        ],
         floors: {
             static: [
                 // Bounding Walls
@@ -369,37 +390,44 @@ const levelList = [
 let testLevel = {
 	name: "Test Level",
 	altSize: {width: 1600, height: 1000},
-	playerStart: {x: 50, y: 570},
+	playerStart: {x: 50, y: 950},
+    backgrounds: [
+
+    ],
 	floors: {
 		static: [
 			{x: 0, y: -100, w: 20, h: 1125, c: "rgba(0, 0, 0, 1)"},
 			{x: 1580, y: -100, w: 20, h: 1125, c: "rgba(0, 0, 0, 1)"},
 			{x: -100, y: 0, w: 1800, h: 20, c: "rgba(0, 0, 0, 1)"},
 			{x: -100, y: 980, w: 1800, h: 20, c: "rgba(0, 0, 0, 1)"},
-			{x: 20, y: 590, w: 210, h: 390, c: "rgba(151,145,145,1)"},
-			{x: 230, y: 690, w: 290, h: 290, c: "rgba(151,145,145,1)"},
-			{x: 520, y: 730, w: 540, h: 10, c: "rgba(167,89,47,1)"},
-			{x: 1060, y: 680, w: 320, h: 300, c: "rgba(151,145,145,1)"},
-			{x: 1380, y: 570, w: 200, h: 160, c: "rgba(151,145,145,1)"},
-			{x: 1310, y: 620, w: 70, h: 60, c: "rgba(151,145,145,1)"},
-			{x: 1510, y: 500, w: 50, h: 50, c: "rgba(47,167,51,1)"},
+			{x: 180, y: 220, w: 240, h: 120, c: "rgba(0, 0, 0, 1)"},
 		],
 		moving: [
+			{x: 650, y: 220, w: 390, h: 120, dir: "horizontal", l1: 650, l2: 800, spd: 3, c: "rgba(0, 0, 0, 1)"},
+			{x: 170, y: 610, w: 110, h: 130, dir: "vertical", l1: 610, l2: 700, spd: 3, c: "rgba(0, 0, 0, 1)"},
 		],
 	},
 	hazards: {
 		static: [
 		],
 		moving: [
-			{x: 260, y: 620, w: 220, h: 40, dir: "horizontal", l1: 230, l2: 1090, spd: 5, c: "rgba(255,0,0,1)"},
+			{x: 670, y: 520, w: 260, h: 80, dir: "horizontal", l1: 670, l2: 800, spd: 3, c: "rgba(0, 0, 0, 1)"},
+			{x: 1220, y: 660, w: 90, h: 120, dir: "vertical", l1: 660, l2: 700, spd: 3, c: "rgba(0, 0, 0, 1)"},
 		],
 		guns: [
 		]
 	},
 	targets: [
-		{x: 1510, y: 500, w: 50, h: 50, c: "rgba(47,167,51,1)"},
 	]
 }
+
+
+
+
+
+
+
+
 
 
 

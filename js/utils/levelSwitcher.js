@@ -53,6 +53,7 @@ function levelSwitcher() {
 }
 
 function loadLevel(levelData) {
+    let backgrounds = levelData.backgrounds.map(f => new Background(f.x, f.y, f.w, f.h, f.c));
     let staticFloors = levelData.floors.static.map(f => new Floor(f.x, f.y, f.w, f.h, f.c));
     let movingFloors = levelData.floors.moving.map(f => new MovingFloor(f.x, f.y, f.w, f.h, f.dir, f.l1, f.l2, f.spd, f.c));
     let staticHazards = levelData.hazards.static.map(f => new Floor(f.x, f.y, f.w, f.h, f.c));
@@ -65,6 +66,7 @@ function loadLevel(levelData) {
         levelData.altSize,
         levelData.playerStart,
         targets,
+        backgrounds,
         staticFloors.concat(movingFloors),
         staticHazards.concat(movingHazards),
         guns

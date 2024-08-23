@@ -56,6 +56,10 @@ function draw() {
 
     onGround = false;
 
+    for (let i in currentLevel.backgrounds){
+        currentLevel.backgrounds[i].draw(); 
+    }
+
     for (let i in currentLevel.floors) {
         collideCheck(currentLevel.floors[i]);
 
